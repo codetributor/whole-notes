@@ -16,6 +16,20 @@ interface Post extends Base {
   slug: Slug;
   title: string;
   description: string;
+  audioUrl: string;
+}
+
+interface Item extends Base {
+  mainImage: Image;
+  slug: Slug;
+  title: string;
+  description: string;
+  price: number;
+}
+
+interface Price {
+  _type: "item";
+  current: number;
 }
 
 interface Author extends Base {
@@ -66,6 +80,11 @@ interface MainImage {
 }
 
 interface Title {
+  _type: "string";
+  current: string;
+}
+
+interface audioUrl {
   _type: "string";
   current: string;
 }

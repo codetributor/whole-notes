@@ -4,6 +4,9 @@ import { client } from "../../lib/sanity.client";
 import PreviewSuspense from "../../components/PreviewSuspense";
 import PreviewBlogList from "../../components/PreviewBlogList";
 import BlogList from "@/components/BlogList";
+import Banner from "@/components/Banner";
+import NotebookBanner from "@/components/NotebookBanner";
+import ItemList from "@/components/ItemList";
 
 const query = groq`
   *[_type=='post'] {
@@ -12,6 +15,14 @@ const query = groq`
     categories[]->
   } | order(_createdAt desc)
 `;
+
+const queryItems = groq`
+  *[_type=='item'] {
+    ...,
+  } 
+`;
+
+export const revalidate = 6000;
 
 async function HomePage() {
   if (previewData()) {
@@ -23,7 +34,15 @@ async function HomePage() {
   }
 
   const posts = await client.fetch(query);
-  return <BlogList posts={posts} />;
+  const items = await client.fetch(queryItems);
+  return (
+    <>
+      <NotebookBanner />
+      <ItemList items={items} />
+      <Banner />
+      <BlogList posts={posts} />
+    </>
+  );
 }
 
 export default HomePage;

@@ -8,10 +8,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
-      <body className="max-w-7xl mx-auto">
+    <html className="max-w-7xl mx-auto">
+      <body>
         <Header />
-        <Banner />
         {children}
       </body>
     </html>
