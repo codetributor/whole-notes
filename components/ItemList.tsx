@@ -33,7 +33,7 @@ function ItemList({ items }: Props) {
                   <p className="underline text-lg font-bold">{item.title}</p>
                   <p className="mx-2 font-bold text-1xl">${item.price}</p>
                 </div>
-                <button className="text-white bg-gray-400 px-4 py-1 rounded-md mt-1">
+                <button className="text-white w-full bg-gray-400 px-4 py-1 rounded-md mt-1">
                   add to cart
                 </button>
               </div>
