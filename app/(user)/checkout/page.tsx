@@ -1,13 +1,15 @@
 "use client";
 
 import CheckoutProduct from "@/components/CheckoutProduct";
-import { selectItems } from "@/slices/basketSlice";
+import { selectItems, selectTotal } from "@/slices/basketSlice";
 import { useSelector } from "react-redux";
+import Currency from "react-currency-formatter";
 
 function Checkout() {
   const items = useSelector(selectItems);
+  const total = useSelector(selectTotal);
   return (
-    <main className="lg-flex mx-auto">
+    <main className="lg:flex mx-auto">
       <div className="flex-grow m-5 shadow-sm">
         {/*left section*/}
         <div className="flex flex-col p-5 space-y-10">
@@ -28,7 +30,22 @@ function Checkout() {
       </div>
 
       {/*right section*/}
-      <div></div>
+      <div
+        className={`flex flex-col p-10 shadow-md ${!items.length && "hidden"}`}
+      >
+        {items.length > 0 && (
+          <>
+            <h2 className="whitespace-nowrap">
+              Subtotal ({items.length} items):{" "}
+              <span className="font-bold"></span>
+              <Currency quantity={total} currency="USD" />
+            </h2>
+            <button className="text-white w-full bg-gray-400 px-4 py-1 rounded-md mt-1">
+              Proceed to Checkout
+            </button>
+          </>
+        )}
+      </div>
     </main>
   );
 }
