@@ -19,7 +19,8 @@ function ItemList({ items }: Props) {
     itemUrl: any,
     itemTitle: any,
     itemPrice: any,
-    itemDescription: any
+    itemDescription: any,
+    itemPriceId: any
   ) => {
     const product = {
       id,
@@ -27,6 +28,7 @@ function ItemList({ items }: Props) {
       title: itemTitle,
       price: itemPrice,
       description: itemDescription,
+      priceId: itemPriceId,
     };
     dispatch(addToBasket(product));
   };
@@ -69,7 +71,8 @@ function ItemList({ items }: Props) {
                     urlFor(item.mainImage).url(),
                     item.title,
                     item.price,
-                    item.description
+                    item.description,
+                    item.priceId
                   );
                 }}
                 className="text-white w-full bg-gray-400 px-4 py-1 rounded-md mt-1"

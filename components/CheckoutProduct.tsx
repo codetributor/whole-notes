@@ -2,7 +2,7 @@ import { addToBasket, removeFromBasket } from "@/slices/basketSlice";
 import Currency from "react-currency-formatter";
 import { useDispatch } from "react-redux";
 
-function CheckoutProduct({ id, url, title, price, description }: any) {
+function CheckoutProduct({ id, url, title, price, description, priceId }: any) {
   const dispatch = useDispatch();
   const addItemToBasket = () => {
     const product = {
@@ -11,6 +11,7 @@ function CheckoutProduct({ id, url, title, price, description }: any) {
       title,
       price,
       description,
+      priceId,
     };
     dispatch(addToBasket(product));
   };

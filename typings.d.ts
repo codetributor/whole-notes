@@ -25,10 +25,15 @@ interface Item extends Base {
   title: string;
   description: string;
   price: number;
+  priceId: string;
 }
 
+interface PriceId {
+  _type: "priceId";
+  current: string;
+}
 interface Price {
-  _type: "item";
+  _type: "price";
   current: number;
 }
 
