@@ -7,23 +7,32 @@ export default async function createCheckoutSession(
 ) {
   const { items } = req.body;
 
-  console.log(items);
-
-  const itemsArray: any = [];
-
-  items.map((item: any) => {
-    let product = {
-      price: item.priceId,
-      quantity: 1,
-    };
-    itemsArray.push(product);
-  });
+  const transformedItems = items.map((item: any) => ({
+    price: item.priceId,
+    quantity: 1,
+  }));
 
   const session = await stripe.checkout.sessions.create({
-    line_items: itemsArray,
+    shipping_options: [
+      {
+        shipping_rate_data: {
+          type: "fixed_amount",
+          fixed_amount: { amount: 0, currency: "usd" },
+          display_name: "Free shipping",
+          delivery_estimate: {
+            minimum: { unit: "business_day", value: 5 },
+            maximum: { unit: "business_day", value: 7 },
+          },
+        },
+      },
+    ],
+    shipping_address_collection: {
+      allowed_countries: ["US"],
+    },
+    line_items: transformedItems,
     mode: "payment",
     success_url: `${process.env.HOST}/success`,
-    cancel_url: `${process.env.HOST}/checkout`,
+    cancel_url: `${process.env.HOST}`,
   });
   res.status(200).json({ id: session.id });
 }
