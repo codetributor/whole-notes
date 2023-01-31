@@ -17,6 +17,7 @@ function Checkout() {
           {items.map((item: any) => (
             <CheckoutProduct
               key={item.id}
+              id={item.id}
               url={item.url}
               title={item.title}
               price={item.price}

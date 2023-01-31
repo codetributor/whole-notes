@@ -22,7 +22,7 @@ function ItemList({ items }: Props) {
     itemDescription: any
   ) => {
     const product = {
-      id: id,
+      id,
       url: itemUrl,
       title: itemTitle,
       price: itemPrice,
@@ -30,6 +30,7 @@ function ItemList({ items }: Props) {
     };
     dispatch(addToBasket(product));
   };
+  console.log(items[0]._id);
   return (
     <div>
       <hr className="border-blue-400 mb-10" />
