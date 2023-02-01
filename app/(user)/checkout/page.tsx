@@ -83,7 +83,7 @@ function Checkout() {
             <button
               role="link"
               onClick={createCheckoutSession}
-              className="text-white w-full bg-gray-400 px-4 py-1 rounded-md mt-1"
+              className="text-white w-full text-xs md:text-sm cursor-pointer focus:outline-none focus:ring-gray-500 active:from-gray-500 bg-gradient-to-b from-gray-200 to-gray-400 px-4 py-1 rounded-md mt-1"
             >
               Proceed to Checkout
             </button>
