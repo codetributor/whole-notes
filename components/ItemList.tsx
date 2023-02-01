@@ -55,8 +55,11 @@ function ItemList({ items }: Props) {
             <div className="mt-5 flex-1">
               <div className="flex flex-col">
                 <div className="flex items-center">
-                  <p className="underline text-lg font-bold">{item.title}</p>
-                  <p className="mx-2 font-bold text-1xl">${item.price}</p>
+                  <p className="line-through text-lg font-bold">{item.title}</p>
+                  <p className="mx-2 line-through font-bold text-1xl">${item.price}</p>
+                  <p
+                  className="text-red-400 text-2xl"
+                  >Sold Out</p>
                 </div>
                 <div>
                   <p className="text-gray-500 line-clamp-2">
