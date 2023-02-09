@@ -39,7 +39,7 @@ function ItemList({ items }: Props) {
       <div className="grid grid-cols-1 md:grid-cols-3 px-10 gap-x-10 gap-y-16 pb-24">
         {items.map((item) => (
           <div key={item._id} className="flex flex-col group cursor-pointer">
-            <div className="relative w-full h-96 drop-shadow-xl group-hover:scale-105 transition-transform duration-200 ease-out">
+            <div className="relative w-full h-80 drop-shadow-xl group-hover:scale-105 transition-transform duration-200 ease-out">
               <Image
                 className="object-cover object-left lg:object-center"
                 src={urlFor(item.mainImage).url()}
