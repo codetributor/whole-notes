@@ -28,13 +28,6 @@ interface Item extends Base {
   priceId: string;
 }
 
-interface Workshop extends Base {
-  mainImage: Image;
-  slug: Slug;
-  title: string;
-  description: string;
-}
-
 interface PriceId {
   _type: "priceId";
   current: string;
