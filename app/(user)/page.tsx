@@ -7,6 +7,7 @@ import BlogList from "@/components/BlogList";
 import Banner from "@/components/Banner";
 import NotebookBanner from "@/components/NotebookBanner";
 import ItemList from "@/components/ItemList";
+import WorkShopBanner from "@/components/WorkShopBanner";
 
 const query = groq`
   *[_type=='post'] {
