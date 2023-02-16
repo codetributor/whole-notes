@@ -18,12 +18,7 @@ function Header() {
       <header className="sticky top-0 z-50 bg-white flex items-center justify-between space-x-2 font-bold px-10 py-5">
         <div className="flex items-center space-x-2">
           <Link href="/">
-            <img
-              src="/logo-whole-notes.png"
-              alt="logo"
-              height={60}
-              width={250}
-            />
+            <img src="/logo-header.png" alt="logo" height={60} width={250} />
           </Link>
         </div>
         <div

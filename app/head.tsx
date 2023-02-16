@@ -1,7 +1,7 @@
 export default function Head() {
   return (
     <>
-      <title>Whole Notes</title>
+      <title>whole notes</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta property="og:url" content="whole-notes.org" />
       <meta property="og:type" content="website" />
