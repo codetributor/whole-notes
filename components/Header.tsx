@@ -13,7 +13,7 @@ function Header() {
   return (
     <>
       <div className="flex justify-center items-center py-2">
-        <p className="text-gray-400">let go to heal not to understand ~</p>
+        <p className="text-gray-400">Let go to heal not to understand ~</p>
       </div>
       <header className="sticky top-0 z-50 bg-white flex items-center justify-between space-x-2 font-bold px-10 py-5">
         <div className="flex items-center space-x-2">
